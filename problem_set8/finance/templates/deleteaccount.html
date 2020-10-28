@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Account
+{% endblock %}
+
+{% block main %}
+    <form action="/deleteaccount" method="post">
+        <h2>Are you sure you want to delete your account?</h2>
+        <hr>
+        <span class="badge badge-warning">(Deleting your account will automatically sell your current assets at the current market price and transfer your total liquid cash back to your bank account.</span>
+        <div class="form-group mt-3">
+            <button class="btn btn-success" type="submit" name="submit_button" value="yes">Yes</button>
+            <button class="btn btn-danger" type="submit"name="submit_button" value="no">No</button>
+        </div>
+    </form>
+{% endblock %}

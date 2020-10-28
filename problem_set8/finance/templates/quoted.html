@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h3>Search results:</h3>
+
+    <div>
+        A share of {{ name }} ({{ symbol }}) costs {{ price }}.
+    </div>
+    <div>
+        <p><a href="/quote">Look up another stock</a> or <a href="/buy">Go to Buy section</a></p>
+    </div>
+{% endblock %}

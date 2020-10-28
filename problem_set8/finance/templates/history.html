@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron-fluid mb-4">
+        <h2 class="capital">History of your transactions</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Shares</th>
+                    <th scope="col">Price per share</th>
+                    <th scope="col">Time of transaction</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asset in history %}
+                    <tr class="{{ "table-success" if asset.amount > 0 else "table-danger" }}">
+                        <td>{{ asset.symbol }}</td>
+                        <td>{{ asset.amount }}</td>
+                        <td>{{ "${:,.2f}".format(asset.price_per_share) }}</td>
+                        <td>{{ asset.time_created }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

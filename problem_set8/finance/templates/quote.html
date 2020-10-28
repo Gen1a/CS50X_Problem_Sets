@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+{% block main %}
+     <form action="/quote" method="post">
+        <div class="form-group">
+            <label for="symbol">Enter the stock you want to look up:</label>
+            <input class="form-control" name="symbol" type="text" placeholder="eg. AAPL">
+        </div>
+        <button class="btn btn-primary" type="submit">Look up</button>
+    </form>
+{% endblock %}
